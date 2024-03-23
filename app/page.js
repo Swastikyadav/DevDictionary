@@ -1,44 +1,38 @@
 import Link from "next/link";
+import { posts } from "#site/content";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
+import { sortPosts } from "@/lib/utils";
+
 export default function Home() {
+  const sortedPosts = sortPosts(posts.filter(post => post.published));
+  const displayPosts = sortedPosts;
+
   return (
     <main className="flex min-h-screen flex-col items-center px-8 py-6">
-      <Input
-        className="rounded-xl bg-slate-100 w-full outline-none h-12 dark:bg-slate-600 dark:text-slate-200"
-        placeholder="Search for programming concepts and patterns"
-      />
-
-      <h1 className="pt-6 pb-2 text-4xl font-bold w-full">Keyboard</h1>
-      <h2 className="pb-6 text-normal font-bold w-full text-purple-500 border-b border-border">/ˈkiːbɔːrd/</h2>
+      <h1 className="pb-2 text-4xl font-bold w-full">DevDictionary</h1>
+      <h2 className="pb-6 text-normal font-bold w-full text-purple-500 border-b border-border">/dev-dik-shə-ˌner-ē/</h2>
 
       <section className="w-full py-6 border-b border-border">
-        <p className="font-bold">Description:</p>
+        <p className="font-bold">WHY?</p>
         <br />
         <p>
-          A set of keys used to operate a typewriter, computer etc.
-          Components of many instruments including the piano, organ, and harpsichord
-          consisting of usually black and white keys that cause different tones to be
-          produced when struck.
-          A device with keys of a musical keyboard, used to control electronic sound-producing
-          devices which may be built into or separate from the keyboard device.
+          
         </p>
       </section>
 
       <section className="w-full py-6 border-b border-border">
         {
-          [
-            {title: "Term one", description: "Small description about the term."},
-            {title: "React composition pattern", description: "Composition in react is a pattern of building reusable components."},
-            {title: "Inheritance", description: "Inheritance is a programming concept of sharing functionality between components."},
-            {title: "Test headline", description: "Testing the list of programming terms, concepts, and patterns."},
-          ].map((post) => {
+          displayPosts.map((post) => {
+            const { slug, title, description } = post;
             return (
               <div className="py-2">
-                <h3 className="text-lg font-bold text-purple-500">{post.title} &rarr;</h3>
-                <p className="text-slate-500">{post.description}</p>
+                <Link href={slug}>
+                  <h3 className="text-lg font-bold text-purple-500">{title} &rarr;</h3>
+                </Link>
+                <p className="text-slate-500">{description}</p>
               </div>
             );
           })

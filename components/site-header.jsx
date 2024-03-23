@@ -2,6 +2,7 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
+import { Input } from "./ui/input";
 import { Icons } from "./icons";
 import { ModeToggle } from "./mode-toggle";
 
@@ -9,7 +10,7 @@ import { Book } from "lucide-react";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="top-0 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 max-w-screen-2xl items-center text-slate-500">
         <Link href="/"><Icons.logo className="h-8 w-8" /></Link>
         <div className="flex flex-1 items-center justify-end space-x-2">
@@ -47,6 +48,13 @@ export function SiteHeader() {
             </Link> */}
           </nav>
         </div>
+      </div>
+
+      <div className="pt-6 px-8">
+        <Input
+          className="rounded-xl bg-slate-100 outline-none h-12 dark:bg-slate-600 dark:text-slate-200"
+          placeholder="Search for programming concepts and patterns"
+        />
       </div>
     </header>
   );
