@@ -15,6 +15,7 @@ export default function Home() {
       <h1 className="pb-2 text-4xl font-bold w-full">DevDictionary</h1>
       <h2 className="pb-6 text-normal font-bold w-full text-purple-500 border-b border-border">/dev-dik-shə-ˌner-ē/</h2>
 
+      {/* Move this section into a common component */}
       <section className="w-full py-6 border-b border-border">
         <p className="font-bold">WHY?</p>
         <br />

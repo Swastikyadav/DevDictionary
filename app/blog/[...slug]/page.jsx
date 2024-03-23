@@ -19,9 +19,18 @@ export default async function PostPage({ params}) {
     }
 
     return (
-        <div>
-            <h1 className="container pt-6 pb-2 text-4xl font-bold w-full">{post.title}</h1>
-            <h2 className="container pb-6 text-normal font-bold w-full text-purple-500 border-b border-border">{post.pronounciation}</h2>
+        <div className="container">
+            <h1 className="pt-6 pb-2 text-4xl font-bold w-full">{post.title}</h1>
+            <h2 className="pb-6 text-normal font-bold w-full text-purple-500 border-b border-border">{post.pronounciation}</h2>
+            
+            <section className="w-full py-6 border-b border-border">
+                <p className="font-bold">Description:</p>
+                <br />
+                <p>
+                    {post.description}
+                </p>
+            </section>
+
             <article className="container py-6 prose dark:prose-invert max-w-3xl mx-auto">
                 {/* <h1 className="mb-2">{post.title}</h1> */}
                 {/* {
