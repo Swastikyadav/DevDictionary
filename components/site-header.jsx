@@ -15,7 +15,7 @@ export function SiteHeader() {
         <Link href="/"><Icons.logo className="h-8 w-8" /></Link>
         <div className="flex flex-1 items-center justify-end space-x-2">
           <nav className="flex items-center">
-            {/* <ModeToggle /> */}
+            <ModeToggle />
             {/* <Link
               href={siteConfig.links.github}
               target="_blank"
