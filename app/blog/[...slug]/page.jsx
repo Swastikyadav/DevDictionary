@@ -19,17 +19,21 @@ export default async function PostPage({ params}) {
     }
 
     return (
-        <article className="container py-6 prose dark:prose-invert max-w-3xl mx-auto">
-            <h1 className="mb-2">{post.title}</h1>
-            {
-                post.description ? (
-                    <p className="text-xl mt-0 text-muted-foreground">
-                        {post.description}
-                    </p>
-                ) : null
-            }
-            <hr className="my-4" />
-            <MDXContent code={post.body} />
-        </article>
+        <div>
+            <h1 className="container pt-6 pb-2 text-4xl font-bold w-full">{post.title}</h1>
+            <h2 className="container pb-6 text-normal font-bold w-full text-purple-500 border-b border-border">{post.pronounciation}</h2>
+            <article className="container py-6 prose dark:prose-invert max-w-3xl mx-auto">
+                {/* <h1 className="mb-2">{post.title}</h1> */}
+                {/* {
+                    post.description ? (
+                        <p className="text-xl mt-0 text-muted-foreground">
+                            {post.description}
+                        </p>
+                    ) : null
+                } */}
+                {/* <hr className="my-4" /> */}
+                <MDXContent code={post.body} />
+            </article>
+        </div>
     );
 }
