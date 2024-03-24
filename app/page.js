@@ -20,7 +20,23 @@ export default function Home() {
         <p className="font-bold">WHY?</p>
         <br />
         <p>
-          
+          Coming from a non-CS background, I struggled with understanding programming concepts like:
+          <br /><br />
+          - Inheritance
+          <br />
+          - Rendering
+          <br />
+          - Pure Function
+          <br />
+          - Higher order components
+          <br /><br />
+          You get the idea. I struggled with these terms and concepts, not syntax or logic building.
+          <br /><br />
+          Understanding these concepts makes it easier to learn programming by the first principle.
+          <br /><br />
+          That's why I built this resource for myself and I will be glad if it helps even one developer other than me.
+          <br /><br />
+          I add new terms, concepts, and patterns with examples and visuals every week.
         </p>
       </section>
 
