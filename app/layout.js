@@ -16,12 +16,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-pt-[3.5rem]">
-      <body className={cn(
-        "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto",
-        inter.variable
-      )}>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto",
+          inter.variable
+        )}
+      >
         <Providers>
-          <div className="relative flex min-h-dvh flex-col bg-background">
+          <div className="relative flex flex-col min-h-dvh bg-background">
             <SiteHeader />
             <main className="flex-1">{children}</main>
           </div>
