@@ -1,0 +1,53 @@
+---
+title: Pure Functions
+pronounciation: /pyoor-fuhngk-shuhns/
+description: Understand pure functions with first principle and examples.
+date: 2025-05-24
+published: true
+---
+
+## What it is:
+
+A pure function is like a mathematical formula. Given the same input, it always produces the same output and doesn't change anything outside itself.
+
+## Why it matters:
+
+Pure functions are predictable, testable, and don't cause unexpected side effects in your program.
+
+## Real-world analogy:
+
+A calculator is pure. When you input 2 + 3, you always get 5, and the calculator doesn't change anything else in the world.
+
+## Example
+
+```js
+// PURE FUNCTION - Always returns same output for same input
+function add(a, b) {
+  return a + b;
+}
+
+console.log(add(2, 3)); // Always returns 5
+console.log(add(2, 3)); // Always returns 5
+
+// IMPURE FUNCTION - Has side effects
+let counter = 0;
+function impureAdd(a, b) {
+  counter++; // Changes something outside the function
+  console.log("Adding numbers"); // Prints to console (side effect)
+  return a + b;
+}
+
+// PURE vs IMPURE comparison
+// Pure: Same input, same output, no side effects
+function multiply(x, y) {
+  return x * y;
+}
+
+// Impure: Depends on external state
+let tax = 0.1;
+function calculateTotal(price) {
+  return price + price * tax; // Depends on external 'tax' variable
+}
+```
+
+If you're familiar with ReactJs functional components, you must understand how important pure functions are.

@@ -1,0 +1,57 @@
+---
+title: Inheritance
+pronounciation: /in-her-i-tuhns/
+description: Understand inheritance with first principle and examples.
+date: 2025-05-24
+published: true
+---
+
+## What it is:
+
+Inheritance is like a family tree for code. Just as you inherit traits from your parents, classes (blueprints for objects) can inherit properties and behaviors from other classes.
+
+## Why it matters:
+
+It prevents code duplication and creates logical relationships between related things.
+
+## Real-world analogy:
+
+Think of vehicles. All vehicles have wheels and can move, but a car is different from a motorcycle. Instead of writing separate code for every vehicle type, you create a base "Vehicle" class and let specific vehicles inherit from it.
+
+## Example
+
+```js
+// Parent class (base class)
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  eat() {
+    console.log(`${this.name} is eating`);
+  }
+
+  sleep() {
+    console.log(`${this.name} is sleeping`);
+  }
+}
+
+// Child class inherits from Animal
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name); // Call parent constructor
+    this.breed = breed;
+  }
+
+  bark() {
+    console.log(`${this.name} says woof!`);
+  }
+}
+
+// Usage
+const myDog = new Dog("Buddy", "Golden Retriever");
+myDog.eat(); // Inherited from Animal
+myDog.bark(); // Dog's own method
+```
+
+The Dog class gets all of Animal's abilities (eat, sleep) plus its own special ability (bark).

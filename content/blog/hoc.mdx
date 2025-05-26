@@ -1,0 +1,45 @@
+---
+title: Higher Order Components
+pronounciation: /haɪə-awr-der-kuhm-poh-nuhnt/
+description: Understand higher order components with first principle and examples.
+date: 2025-05-24
+published: true
+---
+
+## What it is:
+
+An HOC is a function that takes a component and returns a new, enhanced component. It's like a wrapper that adds extra functionality.
+
+## Why it matters:
+
+HOCs let you reuse component logic across multiple components without repeating code.
+
+## Real-world analogy:
+
+Think of gift wrapping. You can wrap any gift (component) with wrapping paper (HOC) to make it look fancy, but the gift inside remains the same.
+
+## Key points about HOC:
+
+- Input: Takes a component as an argument.
+- Output: Returns a new component with added functionality.
+- Reusability: The same HOC can enhance multiple different components.
+- Non-desctructive: The original component remains unchanged.
+
+## Example:
+
+```js
+// HOC that adds a border to any component
+function withBorder(Component) {
+  return function BorderedComponent(props) {
+    return (
+      <div style={{ border: "2px solid red" }}>
+        <Component {...props} />
+      </div>
+    );
+  };
+}
+
+// Usage
+const ButtonWithBorder = withBorder(Button);
+const TextWithBorder = withBorder(Text);
+```
